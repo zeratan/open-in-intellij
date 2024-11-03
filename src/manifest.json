@@ -1,19 +1,24 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Open In IntelliJ",
   "short_name": "Open In IntelliJ",
   "description": "Open files from Chrome Devtools in IntelliJ IDEs (Webstorm, PHPStorm etc.)",
-  "version": "0.8",
-  "devtools_page": "openinide.html",
+  "version": "0.9",
+  "devtools_page": "devtools.html",
   "options_ui": {
     "page": "options.html",
     "open_in_tab": true
   },
+  "action": {
+    "default_popup": "openinide.html"
+  },
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "service_worker.js",
+    "type": "module"
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "activeTab"
   ],
   "icons": {
     "48": "logo-48px.png",
